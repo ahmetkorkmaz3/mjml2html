@@ -7,7 +7,6 @@ const app = express()
 const port = 8000
 
 app.use(bodyParser.text())
-app.use(bodyParser.json())
 
 app.post('/', (req, res) => {
     const isMinify = req.query.minify === 'true'
