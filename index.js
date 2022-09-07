@@ -3,8 +3,11 @@ const mjml = require('mjml')
 const bodyParser = require('body-parser')
 const minify = require('html-minifier').minify
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const app = express()
-const port = 8000
+const port = process.env.PORT
 
 app.use(bodyParser.text())
 
