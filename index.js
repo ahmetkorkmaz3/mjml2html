@@ -7,6 +7,7 @@ const app = express();
 const port = 8000;
 
 app.use(bodyParser.text());
+app.use(bodyParser.json());
 
 app.post('/', (req, res) => {
     const beautify = req.query.beautify === 'true'
@@ -19,14 +20,20 @@ app.post('/', (req, res) => {
             validationLevel,
         }).html;
 
-        console.log(isMinify);
-
         if (isMinify) {
             htmlOutput = minify(htmlOutput);
         }
 
-        res.status(200)
-            .send(htmlOutput)
+        if (req.headers.accept === 'application/json') {
+            res
+                .status(200)
+                .send({
+                    "data": htmlOutput,
+                });
+        } else {
+            res.status(200)
+                .send(htmlOutput);
+        }
     } catch (e) {
         res.status(400)
             .send({
