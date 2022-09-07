@@ -11,6 +11,10 @@ const port = process.env.PORT
 
 app.use(bodyParser.text())
 
+app.get('/', (req, res) => {
+    res.send('Hello visitor! You need to send post request for action. See: <a href="https://www.getpostman.com/collections/68d8b5bb22e834f327be">Postman Collection</a> . Star me on <a href="https://github.com/ahmetkorkmaz3/mjml2html" target="_blank">Github</a>')
+})
+
 app.post('/', (req, res) => {
     const isMinify = req.query.minify === 'true'
 
