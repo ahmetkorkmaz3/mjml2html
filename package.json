@@ -1,17 +1,27 @@
 {
-  "name": "mjml2html",
-  "version": "1.0.0",
-  "description": "MJML to HTML Converter API",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "ahmetkorkmaz3 <ahmetkorkmaz3453@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.20.0",
-    "express": "^4.18.1",
-    "html-minifier": "^4.0.0",
-    "mjml": "^4.13.0"
-  }
+    "name": "mjml2html",
+    "version": "1.0.0",
+    "description": "MJML to HTML Converter API",
+    "main": "index.js",
+    "scripts": {
+        "dev": "node index.js",
+        "prod": "node index.js",
+        "format:check": "prettier --check .",
+        "format:write": "prettier --write .",
+        "lint:check": "eslint .",
+        "lint:fix": "eslint --fix ."
+    },
+    "author": "ahmetkorkmaz3 <ahmetkorkmaz3453@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.20.0",
+        "express": "^4.18.1",
+        "html-minifier": "^4.0.0",
+        "mjml": "^4.13.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.23.0",
+        "eslint-config-prettier": "^8.5.0",
+        "prettier": "^2.7.1"
+    }
 }
