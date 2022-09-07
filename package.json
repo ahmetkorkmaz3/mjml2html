@@ -4,7 +4,7 @@
     "description": "MJML to HTML Converter API",
     "main": "index.js",
     "scripts": {
-        "dev": "node index.js",
+        "dev": "nodemon index.js",
         "prod": "node index.js",
         "format:check": "prettier --check .",
         "format:write": "prettier --write .",
@@ -22,6 +22,7 @@
     "devDependencies": {
         "eslint": "^8.23.0",
         "eslint-config-prettier": "^8.5.0",
+        "nodemon": "^2.0.19",
         "prettier": "^2.7.1"
     }
 }
