@@ -10,15 +10,10 @@ app.use(bodyParser.text())
 app.use(bodyParser.json())
 
 app.post('/', (req, res) => {
-    const beautify = req.query.beautify === 'true'
     const isMinify = req.query.minify === 'true'
-    const validationLevel = req.query.validation || 'strict'
 
     try {
-        let htmlOutput = mjml(req.body, {
-            beautify,
-            validationLevel,
-        }).html
+        let htmlOutput = mjml(req.body).html
 
         if (isMinify) {
             htmlOutput = minify(htmlOutput)
